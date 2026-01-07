@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/logeshwarans-wq/steve.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t nginx-jenkins-app .'
@@ -35,3 +29,4 @@ pipeline {
         }
     }
 }
+
